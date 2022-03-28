@@ -8,7 +8,7 @@ app.listen(PORT, () => {
 });
 
 app.get('/', (req, res) => {
-    res.send("Discography Discovery search bar")
+    res.send("Discography Discovery Top 5 Best Selling Artists")
 });
 
 app.get('/artists', (req, res) => {

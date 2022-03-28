@@ -10,27 +10,27 @@ const createArtist = async () => {
             albums: ["Please Please Me", "With The Beatles", "A Hard Day's Night", "Beatles For Sale", "Help!", "Rubber Soul", "Revolver", "Sgt. Pepper's Lonely Hearts Club", "Magical Mystery Tour", "The Beatles", "Yellow Submarine", "Abbey Road", "Let It Be"]
         },
         {
-            artisName: "Michael Jackson",
+            artistName: "Michael Jackson",
             members: "Michael Jackson",
             albums: ["Got To Be There", "Ben", "Music & Me", "Forever, Michael", "Off The Wall", "Thriller", "Bad", "Dangerous", "Invincible"]
         },
         {
-            artisName: "Elvis Presley",
+            artistName: "Elvis Presley",
             members: "Elvis Presly",
             albums: ["Elvis Presley", "Elvis", "Elvis' Christmas Album", "Elvis Is Back", "His Hand In Mine", "Something For Everybody", "Pot Luck", "Elvis For Everyone!", "How Great Thou Art", "From Elvis In Memphis", "From Mephis To Vegas / From Vegas To Memphis", "That's The Way It Is", "Elvis Country", "Love Letters From Elvis", "Elvis Sings The Wonderful World Of Christmas", "Elvis Now", "He Touched Me", "Elvis", "Raised On Rock / For Ol' Times Sake", "Good Times", "Promised Land", "Today", "From Elvis PResly Boulevard, Memphis Tennessee", "Moody Blue"]
         },
         {
-            artisName: "Queen",
+            artistName: "Queen",
             members: "Freddie Mercury, Brian May, Roger Taylor, John Deacon",
             albums: ["Queen", "Queen II", "Sheer Heart Attack", "A Night At The Opera", "A Day At The Races", "News Of The World", "Jazz", "The Game"]
         },
         {
-            artisName: "Madoonna",
+            artistName: "Madonna",
             members: "Madonna",
             albums: ["Madonna", "Like A Virgin", "True Blue", "Like A Prayer", "Erotica", "Bedtime Stories", "Ray Of Light", "Music", "American Life", "Confession On A Dance Floor", "Hard Candy", "MDNA", "Rebel Heart", "Madame X"]
         }
     ]
-    await Artist.insertMany(artisSeed)
+    await Artist.insertMany(artistSeed)
     console.log(`inserted ${artistSeed.length}`)
 }
 
@@ -169,7 +169,7 @@ const createAlbums = async () =>{
 const run = async () => {
     try{
         await createAlbums()
-        //awai createArtist()
+        //await createArtist()
     }
     catch (error) {
         console.log(error)
