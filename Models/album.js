@@ -3,7 +3,6 @@ const Schema = mongoose.Schema
 
 const Album = new Schema(
     {
-
         albumName:{ type: String, required: true},
         year:{ type: String, required: true},
         cert:{ type: String, required: false},
@@ -12,7 +11,6 @@ const Album = new Schema(
         reviews:[{type: Schema.Types.ObjectId, ref: 'review'}]
     },
     { timestamps: true }
-
 )
 
 module.exports = Album

@@ -9,7 +9,6 @@ router.get('/allReviews', controllers.getAllReviews)
 
 router.post('/artists/create', controllers.createArtist)
 router.post('/albums/create', controllers.createAlbum)
-
 router.post('/albums/:id',controllers.addReview)
 
 module.exports = router;
