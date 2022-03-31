@@ -28,24 +28,16 @@ const getAllArtists = async (req, res) => {
     }
 }
 
-// const getArtistAlbums = async (req, res) => {
-//     try {
-//         const artist = await Artist.find(Album, function(err, res) {
-//             if (err) throw err;
-//             return res.status(200).json({ artist })
-//         })
-//     } catch (error) {
-//         return res.status(500).send(error.message)
-//     }
-// }
-// const getArtistAlbums = async (req, res) => {
-//     index.get('/artist/:artistName/albums', (request, response) => {
-//     console.log(`Getting a message with the id of ${request.params.albums}`)
-//     response.send({ msg: `Message with an id of ${request.params.albums} found` })
-//   })
-// }
-
-
+const getArtistAlbums = async (req, res) => {
+    try {
+        const { id } = req.params
+        const artist = await Artist.findById(id).exec()
+        const albums = await Album.find({artistName: artist.artistName}).exec()
+        return res.status(200).json({ albums })
+    } catch (error) {
+        return res.status(500).send(error.message)
+    }
+}
 
 const createArtist = async (req, res) => {
     try {
@@ -97,5 +89,5 @@ module.exports = {
     getAllArtists,
     createAlbum,
     getAllReviews,
-    // getArtistAlbums
+    getArtistAlbums
 }

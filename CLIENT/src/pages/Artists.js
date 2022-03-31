@@ -26,7 +26,7 @@ useEffect(()=> {
       {artists.map((artist) => {
           return (
               <div className='artist-card' style={{display: 'inline-block', textAlign: 'center', width: '85vw'}} key={artist._id}>
-                <Link to={`/artists/details/${artist._id}`}> 
+                <Link to={`api/artists/${artist._id}/albums`}> 
                   <img src={artist.picture} alt={''}/>
                   <h1>{artist.artistName}</h1>
                 </Link>

@@ -8,20 +8,16 @@ import axios from 'axios'
 
 function ArtistAlbums(props) {
   const [ albums, setAlbums ] = useState([])
-  const [selectedArtist, setArtist] = useState([])
+//   const [selectedArtist, setArtist] = useState([])
 
 
   const getAlbums = async () => {
-    const res = await axios(`http://127.0.0.1:3001/api/artists/details/${artists._id}`)
-    setAlbums(res.data.albums)  
+    const res = await axios("http://127.0.0.1:3001/api/allAlbums")
+    setAlbums(res.data.albums)
 }
 
-useEffect(() => {
-    let selectedArtist = props.artists.filter((artist) => artist.artistName === (id))
-    setArtist(selectedArtist)
-  }, [props.albums, props.artists, id])
 
-useEffect(()=> {
+useEffect(() => {
     getAlbums()
 },[])
   return (
@@ -30,7 +26,7 @@ useEffect(()=> {
       {albums.map((album) => {
           return (
               <div className='album-card' key={album._id}>
-                  <h1>{selectedArtist.artistName}</h1>
+                  <h1>{album.artistName}</h1>
                 <Link to={`artist/albums/${album._id}`}>
                   <img src={album.image} alt={''}/>
                   <h1>{album.albumName}</h1>
