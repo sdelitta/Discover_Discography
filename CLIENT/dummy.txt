@@ -1,0 +1,11 @@
+{/* <header className="App-header">
+       <Nav />
+      </header> */}
+      <main>
+        {/* <Routes>
+          <Route path='/' element={<Artists/>} />
+          <Route path='/albums' element={<Albums/>} />
+          <Route path='/about' element={<About/>} />
+          <Route path='/albums/details' element={<AlbumDetails/>}/>
+          {/* <Route path='/artists/details/:artistId' element={<ArtistDetails/>} /> 
+  </Routes>} */}
