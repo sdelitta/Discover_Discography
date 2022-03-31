@@ -18,7 +18,7 @@ const createArtist = async () => {
         },
         {
             artistName: "Elvis Presley",
-            members: "Elvis Presly",
+            members: "Elvis Presley",
             albums: ["Elvis Presley", "Elvis", "Elvis' Christmas Album", "Elvis Is Back", "His Hand In Mine", "Something For Everybody", "Pot Luck", "Elvis For Everyone!", "How Great Thou Art", "From Elvis In Memphis", "From Mephis To Vegas / From Vegas To Memphis", "That's The Way It Is", "Elvis Country", "Love Letters From Elvis", "Elvis Sings The Wonderful World Of Christmas", "Elvis Now", "He Touched Me", "Elvis", "Raised On Rock / For Ol' Times Sake", "Good Times", "Promised Land", "Today", "From Elvis PResly Boulevard, Memphis Tennessee", "Moody Blue"],
             picture: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Elvis_Presley_Jailhouse_Rock.jpg/1200px-Elvis_Presley_Jailhouse_Rock.jpg"
         },
@@ -42,150 +42,175 @@ const createArtist = async () => {
 const createAlbums = async () =>{
     let albumSeed = [   
         {
+            artistName: "The Beatles",
             albumName: "Please Please Me",
             year: "1963",
             revenue: "Platinum",
             image: ""
         },
         {
+            artistName: "The Beatles",
             albumName: "With The Beatles",
             year: "1963",
             revenue: "Multi-Platinum",
             image: ""
         },
         {
+            artistName: "The Beatles",
             albumName: "A Hard Days Night",
             year: "1964",
             revenue: "Multi-Platinum",
             image: ""
         },
         {
+            artistName: "The Beatles",
             albumName: "Beatles For Sale",
             year: "1964",
             revenue: "Platinum",
             image: ""
         },
         {
+            artistName: "The Beatles",
             albumName: "Help!",
             year: "1965",
             revenue: "Multi-Platinum",
             image: ""
         },
         {
+            artistName: "Michael Jackson",
             albumName: "Got To Be There",
             year: "1972",
             revenue: "Gold",
             image: ""
         },
         {
+            artistName: "Michael Jackson",
             albumName: "Ben",
             year: "1972",
             revenue: "Silver",
             image: ""
         },
         {
+            artistName: "Michael Jackson",
             albumName: "Music & Me",
             year: "1973",
             revenue: "",
             image: ""
         },
         {
+            artistName: "Michael Jackson",
             albumName: "Forever, Michael",
             year: "1975",
             revenue: "",
             image: ""
         },
         {
+            artistName: "Michael Jackson",
             albumName: "Off The Wall",
             year: "1979",
             revenue: "Double-Diamond",
             image: ""
         },
         {
+            artistName: "Elvis Presley",
             albumName: "Elvis Presley",
             year: "1956",
             revenue: "Platinum",
             image: ""
         },
         {
+            artistName: "Elvis Presley",
             albumName: "Elvis",
             year: "1956",
             revenue: "Platinum",
             image: ""
         },
         {
+            artistName: "Elvis Presley",
             albumName: "Elvis' Christmas Album",
             year: "1957",
             revenue: "4x Platinum",
             image: ""
         },
         {
+            artistName: "Elvis Presley",
             albumName: "Elvis Is Back",
             year: "1960",
             revenue: "",
             image: ""
         },
         {
+            artistName: "Elvis Presley",
             albumName: "His Hand In Mine",
             year: "1960",
             revenue: "",
             image: ""
         },
         {
+            artistName: "Queen",
             albumName: "Queen",
             year: "1973",
             revenue: "Gold",
             image: ""
         },
         {
+            artistName: "Queen",
             albumName: "Queen II",
             year: "1974",
             revenue: "Gold",
             image: ""
         },
         {
+            artistName: "Queen",
             albumName: "Sheer Heart Attack",
             year: "1974",
             revenue: "Gold",
             image: ""
         },
         {
+            artistName: "Queen",
             albumName: "A Night At The Opera",
             year: "1975",
             revenue: "Triple Platinum",
             image: ""
         },
         {
+            artistName: "Queen",
             albumName: "A Day At The Races",
             year: "1976",
             revenue: "Platinum",
             image: ""
         },
         {
+            artistName: "Madonna",
             albumName: "Madonna",
             year: "1983",
             revenue: "Diamond",
             image: ""
         },
         {
+            artistName: "Madonna",
             albumName: "Like A Virgin",
             year: "1984",
             revenue: "Double-Diamond",
             image: ""
         },
         {
+            artistName: "Madonna",
             albumName: "True Blue",
             year: "1986",
             revenue: "Double-Diamond+",
             image: ""
         },
         {
+            artistName: "Madonna",
             albumName: "Like A Prayer",
             year: "1989",
             revenue: "Diamond+",
             image: ""
         },
         {
+            artistName: "Madonna",
             albumName: "Erotica",
             year: "1992",
             revenue: "6x Platinum",
