@@ -2,6 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from "react"
 import {getArtists} from "./utilities"
+import AddArtist from "../components/AddArtist"
+
 function Artists(props) {
   const [ artists, setArtists ] = useState([])
 
@@ -29,7 +31,8 @@ function Artists(props) {
                   <span></span>
               </div>
         )})}
-      </div>  
+      </div>
+      <AddArtist />
       <div className="footer">
         <span></span>
         <h6>copyright 2022</h6>

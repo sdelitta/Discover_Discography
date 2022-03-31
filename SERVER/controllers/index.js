@@ -1,4 +1,4 @@
-const { Album, Artist, Review } = require('../models')
+const { Album, Artist, Review, CustomArtist, CustomAlbum } = require('../models')
 const express = require('express')
 
 const getAllAlbums = async (req, res) => {
@@ -51,7 +51,7 @@ const getArtistAlbums = async (req, res) => {
 
 const createArtist = async (req, res) => {
     try {
-        const artist = await new Artist(req.body)
+        const artist = await new CustomArtist(req.body)
         await artist.save()
         return res.status(201).json({
             artist,
@@ -63,7 +63,7 @@ const createArtist = async (req, res) => {
 
 const createAlbum = async (req, res) => {
     try {
-        const album = await new Album(req.body)
+        const album = await new CustomAlbum(req.body)
         await album.save()
         return res.status(201).json({
             album,

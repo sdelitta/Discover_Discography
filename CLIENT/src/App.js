@@ -7,6 +7,7 @@ import About from './pages/About'
 import Albums from './pages/Albums'
 import AlbumDetails from './pages/AlbumDetails';
 import ArtistAlbums from './pages/ArtistAlbums'
+// import AddArtist from './components/AddArtist'
 
 function App() {
   return (

@@ -1,7 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import ArtistCards from '../components/ArtistCards'
-// import image from '../images/matt-bowden-GZc4fnQsaWQ-unsplash.jpg'
 import { useState, useEffect } from "react"
 import axios from 'axios'
 
@@ -21,11 +19,10 @@ function About(props) {
   }, [])
     return (
       <div className='artists'>
-        <h1>Top 5 Bestselling Artists Of Alltime!</h1>
+        <h1>Top 5 Bestselling Artists Of All-time!</h1>
           {artists.map((artist) => {
             return (
               <Link to={`/artists/details/${artist._id}`}> 
-              <ArtistCards />
                 {/* <div style={{display: 'inline-block', textAlign: 'center', width: '85vw'}} key={artist._id}>
                     <img src={artist.picture} alt={''}/>
                     <h1>{artist.artistName}</h1>
