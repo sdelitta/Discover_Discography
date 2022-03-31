@@ -22,7 +22,7 @@ function App() {
           <Route path='/albums' element={<Albums/>} />
           <Route path='/about' element={<About/>} />
           <Route path='/albums/details/:albumId' element={<AlbumDetails/>}/>
-          <Route path='/artist/:id/albums' element={<ArtistAlbums/>}/>
+          <Route path='/artists/:id/albums' element={<ArtistAlbums/>}/>
         </Routes>
       </main>
     </div>

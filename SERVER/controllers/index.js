@@ -19,6 +19,16 @@ const getAllReviews = async (req, res) => {
     }
 }
 
+const getArtist = async (req, res) => {
+    try {
+        const { id } = req.params
+        const artist = await Artist.findById(id)
+        return res.status(200).json({ artist })
+    } catch (error) {
+        return res.status(500).send(error.message);
+    }
+}
+
 const getAllArtists = async (req, res) => {
     try {
         const artists = await Artist.find()
@@ -89,5 +99,6 @@ module.exports = {
     getAllArtists,
     createAlbum,
     getAllReviews,
-    getArtistAlbums
+    getArtistAlbums,
+    getArtist
 }

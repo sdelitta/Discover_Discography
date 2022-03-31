@@ -7,6 +7,7 @@ router.get('/allAlbums', controllers.getAllAlbums)
 router.get('/allArtists', controllers.getAllArtists)
 router.get('/allReviews', controllers.getAllReviews)
 router.get("/artists/:id/albums", controllers.getArtistAlbums)
+router.get("/artists/:id", controllers.getArtist)
 
 router.post('/artists/create', controllers.createArtist)
 router.post('/albums/create', controllers.createAlbum)
