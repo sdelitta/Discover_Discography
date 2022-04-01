@@ -1,4 +1,4 @@
-const { Album, Artist, Review, CustomArtist, CustomAlbum } = require('../models')
+const { Album, Artist, Review } = require('../models')
 const express = require('express')
 
 const getAllAlbums = async (req, res) => {
@@ -51,7 +51,7 @@ const getArtistAlbums = async (req, res) => {
 
 const createArtist = async (req, res) => {
     try {
-        const artist = await new CustomArtist(req.body)
+        const artist = await new Artist(req.body)
         await artist.save()
         return res.status(201).json({
             artist,
@@ -61,44 +61,53 @@ const createArtist = async (req, res) => {
     }
 }
 
-const createAlbum = async (req, res) => {
+const deleteArtist = async (req, res) => {
     try {
-        const album = await new CustomAlbum(req.body)
-        await album.save()
-        return res.status(201).json({
-            album,
-        });
+        const id = req.params.id
+        await Artist.findByIdAndDelete(id)
+        return res.status(200).send("Successfully Deleted")
     } catch (error) {
         return res.status(500).json({ error: error.message })
     }
 }
 
-const addReview = async (req,res) =>{
-    try{
-        const { id } = req.params
-        const rev = await new Review(req.body)
-        await rev.save()
-        const cost = await Album.findById(id)
+// const createAlbum = async (req, res) => {
+//     try {
+//         const album = await new CustomAlbum(req.body)
+//         await album.save()
+//         return res.status(201).json({
+//             album,
+//         });
+//     } catch (error) {
+//         return res.status(500).json({ error: error.message })
+//     }
+// }
 
-        if(cost){
-            cost.reviews.push(rev)
-            cost.save()
-            return res.status(200).send(`Added Review to ${cost.albumName}`)
-        }
-            return res.status(404).send('Album with the specified ID does not exist');
-    }
-    catch (error) {
-        return res.status(500).json({ error: error.message })
-    }
-}
+// const addReview = async (req,res) =>{
+//     try{
+//         const { id } = req.params
+//         const rev = await new Review(req.body)
+//         await rev.save()
+//         const cost = await Album.findById(id)
+
+//         if(cost){
+//             cost.reviews.push(rev)
+//             cost.save()
+//             return res.status(200).send(`Added Review to ${cost.albumName}`)
+//         }
+//             return res.status(404).send('Album with the specified ID does not exist');
+//     }
+//     catch (error) {
+//         return res.status(500).json({ error: error.message })
+//     }
+// }
 
 module.exports = {
     getAllAlbums,
     createArtist,
-    addReview,
     getAllArtists,
-    createAlbum,
     getAllReviews,
     getArtistAlbums,
-    getArtist
+    getArtist,
+    deleteArtist
 }

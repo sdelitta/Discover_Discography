@@ -1,12 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from "react"
-import {getArtists} from "./utilities"
+import {getArtists, deleteArtist} from "./utilities"
 import AddArtist from "../components/AddArtist"
 
 function Artists(props) {
   const [ artists, setArtists ] = useState([])
-
 
   useEffect(() => { 
     getArtists().then((artists)=> {
@@ -16,7 +15,7 @@ function Artists(props) {
   return (
     <div className='artists-page'>
       <div className='artist-title'>
-        <h1>Top 5 Bestselling Artists Of All-time</h1>
+        <h1>Artist Database</h1>
       </div>
       <div className='artists'>
       {artists.map((artist) => {
@@ -26,6 +25,7 @@ function Artists(props) {
                   <img src={artist.picture} alt={''}/>
                   <h1>{artist.artistName}</h1>
                 </Link>
+                <button onClick= {()=> {deleteArtist (artist._id)}}  >Delete</button>
                   <h5>Members: {artist.members}</h5>
                   <h5>Albums: {artist.albums.join(", ")}</h5>
                   <span></span>

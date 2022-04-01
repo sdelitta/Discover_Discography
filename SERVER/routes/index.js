@@ -8,9 +8,8 @@ router.get('/allArtists', controllers.getAllArtists)
 router.get('/allReviews', controllers.getAllReviews)
 router.get("/artists/:id/albums", controllers.getArtistAlbums)
 router.get("/artists/:id", controllers.getArtist)
+router.delete("/artists/:id", controllers.deleteArtist)
 
 router.post('/artists/create', controllers.createArtist)
-router.post('/albums/create', controllers.createAlbum)
-router.put('/albums/:id',controllers.addReview)
 
 module.exports = router

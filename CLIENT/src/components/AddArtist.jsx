@@ -10,51 +10,40 @@ function AddArtist() {
   const getDetails = () => {
   return {
         artistName: fName,
-        Members: fMembers,
-        Albums: fAlbums,
-        Picture: fPicture
+        members: fMembers,
+        albums: fAlbums,
+        picture: fPicture
       }
   }
 
-  const sendToAPI = async (e) => {
-      const details = getDetails()        
-      
-      // const something = await axios.post(`http://127.0.0.1:3001/api/coasters/review/623cb3b8d6168b0bed6a5176`,details)  
-      const something = await axios.put(`http://127.0.0.1:3001/api/`, details)  
+    const sendToAPI = async (e) => {
+        e.preventDefault()  
+        const details = getDetails()        
+        const something = await axios.post(`http://127.0.0.1:3001/api/artists/create`, details)
+        console.log(something)
+        window.location.reload()
+    }
 
-      e.preventDefault()  
-      console.log(something)
- }
-
-  return ( 
-    <div className='add-artist'>
-        <h2>Add Artists Here!</h2>
-        
-
-        <form id="artist-form" action="put">
-          <div className="pinfo">Custom Artist Form</div>
-  
-              <div className="form-group">
-              <div className="col-md-4 inputGroupContainer">
-              <div className="input-group">
-              <span className="input-group-addon"><i className="artist-name"></i></span>
-              <input  name="name" placeholder="John Doe" className="form-control"  type="text" onChange={(e) => setName(e.target.value)}/>
-          </div>
-             </div>
-          </div>
-            
-          <div className="form-group">
-            <div className="col-md-4 inputGroupContainer">
-            <div className="input-group">
-              <span className="input-group-addon"><i className="fa fa-envelope"></i></span>
-              <input name="comment" type="text" className="form-control" placeholder="This album rocks!" onChange={(e) => setName(e.target.value)} />
-              <button onClick={()=> sendToAPI()}>Submit</button>
-            </div>
-            </div>
-          </div>
-        </form>
-</div>
-  )
+    return ( 
+        <div className='customize-db'>
+            <h2>Add Artists Here!</h2>
+            <form id="add-form" onSubmit= {sendToAPI}>
+                <div className="pinfo">Custom Artist Form</div>
+                <div className="form-group">
+                    <div className="col-md-4 inputGroupContainer">
+                        <div className="input-group">
+                            <span className="input-group-addon"><i className="artist-name"></i></span>
+                            <input name="name" placeholder="Artist Name" className="form-control"  type="text" value={fName} onChange={(e) => setName(e.target.value)}/>
+                            <input name="members" type="text" className="form-control" placeholder="Band Members" value={fMembers} onChange={(e) => setMembers(e.target.value)} />
+                            <input name="albums" type="text" className="form-control" placeholder="Albums" value={fAlbums} onChange={(e) => setAlbums(e.target.value)} />
+                            <input name="picture" type="text" className="form-control" placeholder="Photo URL" value={fPicture} onChange={(e) => setPicture(e.target.value)} />
+                        </div>
+                    </div>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    )
 }
 
 export default AddArtist

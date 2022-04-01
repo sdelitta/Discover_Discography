@@ -5,14 +5,10 @@ const ReviewSchema = require('./review')
 
 const Album = model('album', AlbumSchema)
 const Artist = model('artist', ArtistSchema)
-const CustomArtist = model('customArtist', ArtistSchema )
-const CustomAlbum = model('customAlbum', AlbumSchema )
 const Review = model('review', ReviewSchema)
 
 module.exports = {
     Album,
     Artist,
     Review,
-    CustomArtist,
-    CustomAlbum
 }
