@@ -7,7 +7,7 @@ function Nav() {
     <header>
       <nav>
         <Link to='/' >Artists</Link>
-        <Link to='/albums' >Albums</Link>
+        <Link to='/allAlbums' >Albums</Link>
         <Link to='/about' >About</Link>
       </nav>
     </header>

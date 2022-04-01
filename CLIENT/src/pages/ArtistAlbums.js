@@ -26,28 +26,28 @@ function ArtistAlbums(props) {
     }
     return (
         <div className='artist-albums-page'>
-        <div className='artists'>
-            <div classname='artist-header'>
+            <div className='artist-title'>
                 <h1>{artist.artistName}</h1>
             </div>
-            {albums.map((album) => {
-            return (
-                <div className='album-card' key={album._id}>
-                    <Link to={`artists/albums/${album._id}`}>
-                    <img src={album.image} alt={''}/>
-                    <h1>{album.albumName}</h1>
-                    </Link>
-                    <h5>Artist: {album.artistName}</h5>
-                    <h5>Year Released: {album.year}</h5>
-                    <h5>Certification: {album.revenue}</h5>
-                    <span></span>
-                </div>
-            )})}
-        </div>  
-        <div className="footer">
-            <span></span>
-            <h6>copyright 2022</h6>
-        </div>
+            <div className='artists'>
+                {albums.map((album) => {
+                return (
+                    <div className='artist-card' key={album._id}>
+                        <Link to={`artists/albums/${album._id}`}>
+                        <img src={album.image} alt={''}/>
+                        <h1>{album.albumName}</h1>
+                        </Link>
+                        <h5>Artist: {album.artistName}</h5>
+                        <h5>Year Released: {album.year}</h5>
+                        <h5>Certification: {album.revenue}</h5>
+                        <span></span>
+                    </div>
+                )})}
+            </div>  
+            <div className="footer">
+                <span></span>
+                <h6>copyright 2022</h6>
+            </div>
         </div>
     ) 
 }

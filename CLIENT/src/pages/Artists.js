@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from "react"
 import {getArtists, deleteArtist} from "./utilities"
-import AddArtist from "../components/AddArtist"
+import CustomizeArtist from "../components/CustomizeArtist"
 
 function Artists(props) {
   const [ artists, setArtists ] = useState([])
@@ -18,7 +18,7 @@ function Artists(props) {
         <h1>Artist Database</h1>
       </div>
       <div className='artists'>
-      {artists.map((artist) => {
+        {artists.map((artist) => {
           return (
               <div className='artist-card' style={{display: 'inline-block', textAlign: 'center', width: '85vw'}} key={artist._id}>
                 <Link to={`/artists/${artist._id}/albums`}> 
@@ -32,7 +32,7 @@ function Artists(props) {
               </div>
         )})}
       </div>
-      <AddArtist />
+      <CustomizeArtist artists={artists} />
       <div className="footer">
         <span></span>
         <h6>copyright 2022</h6>

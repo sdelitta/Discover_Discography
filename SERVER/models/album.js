@@ -7,8 +7,6 @@ const Album = new Schema(
         year:{ type: String, required: true},
         revenue:{ type: String, required: false},
         image:{type: String, required: false},
-
-        reviews:{type: Array, ref: 'review'}
     },
     { timestamps: true }
 )

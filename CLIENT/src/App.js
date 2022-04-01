@@ -7,20 +7,21 @@ import About from './pages/About'
 import Albums from './pages/Albums'
 import AlbumDetails from './pages/AlbumDetails';
 import ArtistAlbums from './pages/ArtistAlbums'
-// import AddArtist from './components/AddArtist'
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Discography Discovery</h1>
-        <span></span>
+        <div className="site-name">
+          <h1>Discover Discography</h1>
+        </div>  
+          <span></span>
        <Nav />
       </header>
       <main>
         <Routes>
           <Route path='/' element={<Artists/>} />
-          <Route path='/albums' element={<Albums/>} />
+          <Route path='/allAlbums' element={<Albums/>} />
           <Route path='/about' element={<About/>} />
           <Route path='/albums/details/:albumId' element={<AlbumDetails/>}/>
           <Route path='/artists/:id/albums' element={<ArtistAlbums/>}/>

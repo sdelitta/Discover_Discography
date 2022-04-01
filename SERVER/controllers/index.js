@@ -1,19 +1,10 @@
-const { Album, Artist, Review } = require('../models')
+const { Album, Artist } = require('../models')
 const express = require('express')
 
 const getAllAlbums = async (req, res) => {
     try {
         const albums = await Album.find()
         return res.status(200).json({ albums })
-    } catch (error) {
-        return res.status(500).send(error.message);
-    }
-}
-
-const getAllReviews = async (req, res) => {
-    try {
-        const reviews = await Review.find()
-        return res.status(200).json({ reviews })
     } catch (error) {
         return res.status(500).send(error.message);
     }
@@ -71,43 +62,22 @@ const deleteArtist = async (req, res) => {
     }
 }
 
-// const createAlbum = async (req, res) => {
-//     try {
-//         const album = await new CustomAlbum(req.body)
-//         await album.save()
-//         return res.status(201).json({
-//             album,
-//         });
-//     } catch (error) {
-//         return res.status(500).json({ error: error.message })
-//     }
-// }
-
-// const addReview = async (req,res) =>{
-//     try{
-//         const { id } = req.params
-//         const rev = await new Review(req.body)
-//         await rev.save()
-//         const cost = await Album.findById(id)
-
-//         if(cost){
-//             cost.reviews.push(rev)
-//             cost.save()
-//             return res.status(200).send(`Added Review to ${cost.albumName}`)
-//         }
-//             return res.status(404).send('Album with the specified ID does not exist');
-//     }
-//     catch (error) {
-//         return res.status(500).json({ error: error.message })
-//     }
-// }
+const editArtist = async (req, res) => {
+    try {
+        const id = req.params.id
+        await Artist.updateOne({ _id: id }, req.body)
+        return res.status(200).send("Successfully Edited")
+    } catch (error) {
+        return res.status(500).json({ error: error.message })
+    }
+}
 
 module.exports = {
     getAllAlbums,
     createArtist,
     getAllArtists,
-    getAllReviews,
     getArtistAlbums,
     getArtist,
-    deleteArtist
+    deleteArtist,
+    editArtist
 }
