@@ -20,7 +20,6 @@ function ArtistAlbums(props) {
         })
     },[])
 
-
     if(!artist){
         return <div>Loading... (cue cool spinner)</div>
     }

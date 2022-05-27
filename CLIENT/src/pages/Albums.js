@@ -20,24 +20,24 @@ function Albums() {
   } else {
     return (
       <div className='albums-page'>
-        <div className="artist-title">
+        <div id="artist-title">
           <h1>Albums DB</h1>
         </div>
           {albums.map((album) => {
             return (
-              <div style={{display: 'inline-block', textAlign: 'center', width: '85vw'}} key={album._id}>
+              <div className="album-cards" style={{display: 'inline-block', textAlign: 'center', width: '85vw'}} key={album._id}>
                 <Link to={`/albums/details/${album._id}`}>
-                  <img src={album.image} alt={''} style={{width: '85vw'}}/>
+                  <img src={album.image} alt={''}/>
                   <h1>{album.albumName}</h1>
                 </Link>
                   <p>Year Released:{album.year}</p>
                   <p>Certification: {album.revenue}</p>
-                  {/* {album.reviews.map((rev) => {
-                    return (
-                    <div key={rev._id}></div>
-                  )})} */}
               </div>
           )})}
+          <div className="footer">
+                <span></span>
+                <h6>copyright 2022</h6>
+            </div>
       </div>
   )
 }

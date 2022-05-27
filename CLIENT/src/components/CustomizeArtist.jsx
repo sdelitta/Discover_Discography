@@ -52,7 +52,7 @@ function CustomizeArtist(props) {
                 Artists Here!
             </h2>
             <form id="add-form" onSubmit= {sendToAPI}>
-                <div className="custom-title">Custom Artist Form</div>
+                <div className="custom-title"></div>
                 <div className="form-group">
                     <span></span>
                     {isAdd 
