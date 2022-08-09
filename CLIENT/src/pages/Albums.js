@@ -20,7 +20,7 @@ function Albums() {
   } else {
     return (
       <div className='albums-page'>
-        <div id="artist-title">
+        <div className="artist-title">
           <h1>Albums DB</h1>
         </div>
           {albums.map((album) => {

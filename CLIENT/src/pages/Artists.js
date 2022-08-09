@@ -26,8 +26,8 @@ function Artists(props) {
                   <h1>{artist.artistName}</h1>
                 </Link>
                 <button onClick= {()=> {deleteArtist (artist._id)}}  >Delete</button>
-                  <h5>Members: {artist.members}</h5>
-                  <h5>Albums: {artist.albums.join(", ")}</h5>
+                  <h5 className='artist-members'>Members: {artist.members}</h5>
+                  {/* <h5>Albums: {artist.albums.join(", ")}</h5> */}
                   <span></span>
               </div>
         )})}
