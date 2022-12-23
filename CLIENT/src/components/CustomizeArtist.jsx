@@ -43,11 +43,11 @@ function CustomizeArtist(props) {
     return ( 
         <div className='customize-db'>
             <h2>
-                {isAdd? "Add" : <button onClick={() => {setAdd(true)}}>Add</button>}
+                {isAdd ? "Add" : <button onClick={() => {setAdd(true)}}>Add</button>}
                 {" "}
                 or
                 {" "} 
-                {!isAdd? "Customize" : <button onClick={() => {setAdd(false)}}>Customize</button>} 
+                {!isAdd ? "Customize" : <button onClick={() => {setAdd(false)}}>Customize</button>} 
                 {" "}
                 Artists Here!
             </h2>

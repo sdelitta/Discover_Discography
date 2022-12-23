@@ -1,8 +1,6 @@
 import React from 'react'
 import Albums from './Albums'
 
-
-
 function AlbumDetails() {
   return (
     <div>

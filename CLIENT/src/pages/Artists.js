@@ -21,12 +21,14 @@ function Artists(props) {
         {artists.map((artist) => {
           return (
               <div className='artist-card' style={{display: 'inline-block', textAlign: 'center', width: '85vw'}} key={artist._id}>
-                <Link to={`/artists/${artist._id}/albums`}> 
-                  <img src={artist.picture} alt={''}/>
+                <Link to={`/artists/${artist._id}/albums`}>
+                  <div class="artist-image">
+                    <img src={artist.picture} alt={''}/>
+                  </div> 
                   <h1>{artist.artistName}</h1>
                 </Link>
                 <button onClick= {()=> {deleteArtist (artist._id)}}  >Delete</button>
-                  <h5 className='artist-members'>Members: {artist.members}</h5>
+                  {/* <h5 className='artist-members'>Members: {artist.members}</h5> */}
                   {/* <h5>Albums: {artist.albums.join(", ")}</h5> */}
                   <span></span>
               </div>
