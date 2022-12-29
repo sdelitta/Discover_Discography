@@ -31,7 +31,7 @@ function ArtistAlbums(props) {
             <div className='artists'>
                 {albums.map((album) => {
                 return (
-                    <div className='artist-card' key={album._id}>
+                    <div className='album-card' key={album._id}>
                         <Link to={`artists/albums/${album._id}`}>
                         <img src={album.image} alt={''}/>
                         <h1>{album.albumName}</h1>

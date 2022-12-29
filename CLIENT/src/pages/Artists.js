@@ -23,7 +23,7 @@ function Artists(props) {
               <div className='artist-card' style={{display: 'inline-block', textAlign: 'center', width: '85vw'}} key={artist._id}>
                 <Link to={`/artists/${artist._id}/albums`}>
                   <div class="artist-image">
-                    <img src={artist.picture} alt={''}/>
+                    <img src={artist.picture} alt={artist.artistName}/>
                   </div> 
                   <h1>{artist.artistName}</h1>
                 </Link>

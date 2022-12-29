@@ -30,8 +30,9 @@ function Albums() {
                   <img src={album.image} alt={''}/>
                   <h1>{album.albumName}</h1>
                 </Link>
-                  <p>Year Released:{album.year}</p>
-                  <p>Certification: {album.revenue}</p>
+                <p>{album.artistName}</p>
+                <p>Year Released:{album.year}</p>
+                <p>Certification: {album.revenue}</p>
               </div>
           )})}
           <div className="footer">
